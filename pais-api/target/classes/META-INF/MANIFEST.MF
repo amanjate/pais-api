@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: aderito
+Build-Jdk: 11.0.13
+Implementation-Title: Pais API
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: mz.co.amanjate.pais
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: http://projects.spring.io/spring-boot/pais-api/
+Created-By: Maven Integration for Eclipse
+
