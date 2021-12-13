@@ -29,27 +29,17 @@ public class PaisService {
 	}
 
 	public void updatePais(Pais pais) {
-		Pais p = getPais(pais.getId());
-		
-		if (p != null) {
-			p = pais;
-			paisRepository.save(p);
-		}
-		
+		paisRepository.findById(pais.getId()).ifPresent(p -> paisRepository.save(pais));
 	}
 	
 	public void removePais(int id) {
-		paisRepository.delete(id);
+		paisRepository.findById(id).ifPresent(paisRepository::delete);
 	}
 	
-	public Pais getPais(int id) {
-		return paisRepository.findOne(id);
-	}
-	
-	public List<Pais> getAllSortedPaises(String orderby) {
+	public List<Pais> getAllPaises(String orderby) {
 		List<Pais> paises = new ArrayList<>();
 		
-		paisRepository.findAll(new Sort(Sort.Direction.ASC, orderby)).forEach(paises::add);
+		paisRepository.findAll(Sort.by(Sort.Direction.ASC, orderby)).forEach(paises::add);
 		
 		return paises;
 	}

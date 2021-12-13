@@ -32,7 +32,7 @@ public class PaisController {
 		return paisService.getAllPaises();
 	}
 	
-	@PutMapping("/paises/{id}")
+	@PutMapping("/paises")
 	public void updatePais(@RequestBody Pais pais) {
 		paisService.updatePais(pais);
 	}
@@ -43,8 +43,8 @@ public class PaisController {
 	}
 	
 	@GetMapping("/paises/{orderby}")
-	public List<Pais> getAllSortedPaises(@PathVariable String orderby) {
-		return paisService.getAllSortedPaises(orderby);
+	public List<Pais> getAllPaises(@PathVariable String orderby) {
+		return paisService.getAllPaises(orderby);
 	}
 	
 }
